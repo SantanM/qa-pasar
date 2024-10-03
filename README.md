@@ -22,7 +22,7 @@ sudo apt install r-base r-base-dev
 ```
 - Install Java
 ```
-export JAVA_HOME=/usr/lib/jvm/openjdk-11
+export JAVA_HOME=/usr/lib/jvm/openjdk
 export PATH="$JAVA_HOME/bin::/root/.cargo/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/lib/jvm/openjdk-11/lib/server
 
@@ -42,7 +42,7 @@ sudo apt install r-cran-rjava
 
 - Other dependencies of DQD
 ```
-sudo Rscript -e 'install.packages(c("remotes"))'
+sudo Rscript -e 'install.packages(c("remotes", "shiny", "rJava"))'
 ```
 
 - Installing DataQuality Dashboard
@@ -51,4 +51,9 @@ remotes::install_github("OHDSI/SqlRender")
 remotes::install_github("OHDSI/ParallelLogger")
 remotes::install_github("OHDSI/DatabaseConnector")
 remotes::install_github("OHDSI/DataQualityDashboard")
+```
+### Show Results on Shiny App
+
+```
+DataQualityDashboard::viewDqDashboard(file.path(getwd(), "./output/pasar-20241001115613.json"))
 ```
