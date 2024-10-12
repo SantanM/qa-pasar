@@ -28,4 +28,5 @@ DataQualityDashboard::executeDqChecks(connectionDetails = connectionDetails,
                                       verboseMode = verboseMode,
                                       writeToTable = writeToTable,
                                       checkLevels = checkLevels,
-                                      checkNames = checkNames)
+                                      checkNames = checkNames, 
+                                      cdmVersion = cdmVersion)
