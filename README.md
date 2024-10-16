@@ -55,7 +55,7 @@ remotes::install_github("OHDSI/DataQualityDashboard")
 ### Show Results on Shiny App
 
 ```
-Rscript -e 'DataQualityDashboard::viewDqDashboard(file.path(getwd(), "./output/pasar-20241012082725.json"))'
+Rscript -e 'DataQualityDashboard::viewDqDashboard(file.path(getwd(), "./output/pasar-20241015133901.json"))'
 ```
 
 ### Run the script
