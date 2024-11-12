@@ -6,7 +6,7 @@ connectionDetails <- DatabaseConnector::createConnectionDetails(
     pathToDriver = '../'
 )
 
-cdmDatabaseSchema <- "omop_sqldev_schema"
+cdmDatabaseSchema <- "omop_etl_schema"
 resultsDatabaseSchema <- "qa_results"
 cdmSourceName <- "PASAR"
 numThreads <- 1
@@ -17,6 +17,7 @@ writeToTable <- FALSE
 checkLevels <- c("TABLE", "FIELD", "CONCEPT")
 checkNames <- c()
 cdmVersion <- "5.4"
+tablesToExclude <- c("COHORT", "COHORT_DEFINITION", "CONCEPT", "VOCABULARY", "CONCEPT_ANCESTOR", "CONCEPT_RELATIONSHIP", "CONCEPT_CLASS", "CONCEPT_SYNONYM", "RELATIONSHIP", "DOMAIN")
 
 DataQualityDashboard::executeDqChecks(connectionDetails = connectionDetails, 
                                       cdmDatabaseSchema = cdmDatabaseSchema, 
@@ -29,4 +30,5 @@ DataQualityDashboard::executeDqChecks(connectionDetails = connectionDetails,
                                       writeToTable = writeToTable,
                                       checkLevels = checkLevels,
                                       checkNames = checkNames, 
-                                      cdmVersion = cdmVersion)
+                                      cdmVersion = cdmVersion
+                                      tablesToExclude = tablesToExclude)
